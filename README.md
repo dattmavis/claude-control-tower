@@ -47,6 +47,35 @@ Your own `STATUS.md`, `whats-next.json`, task files, notes and archive are git-i
 
 Windows, PowerShell, Windows Terminal and Claude Code. The scripts are short, so porting them to bash is straightforward.
 
+### The easy way: ask Claude Code
+
+You don't have to do any of the steps below yourself. Open Claude Code and paste this:
+
+```
+Set up the control tower from https://github.com/dattmavis/claude-control-tower for me.
+Follow the "Instructions for Claude Code" section in its README.
+```
+
+It'll clone the repo, ask you a few questions (where to put it, which guardrails you want, which tools you use), and show you every change to your own Claude Code config before making it.
+
+### Instructions for Claude Code
+
+If a user has asked you to set this up, work through these in order. Ask before changing anything outside the tower folder, and show the exact change first.
+
+1. **Check the platform.** The scripts are PowerShell and expect Windows Terminal. On macOS or Linux, tell the user that, and offer to port `new-workstream.ps1`, `start-session.ps1`, `untracked.ps1`, `hooks/reload-context.ps1` and `update-check/run.ps1` to bash before going further.
+2. **Clone** to `~/control-tower` unless the user wants it somewhere else. Use that absolute path, with forward slashes, everywhere below.
+3. **Copy the examples:** `STATUS.example.md` to `STATUS.md` and `whats-next.example.json` to `whats-next.json`. Clear the example rows out of `STATUS.md`, keeping the header and table columns.
+4. **Guardrails.** Walk the user through `CLAUDE.example.md` one section at a time and ask what fits. Merge what they keep into `~/.claude/CLAUDE.md`, adding to what's there and never replacing their existing rules. Show the result before writing it. Don't skip this step, even if the user says to hurry.
+5. **Hook.** Add the SessionStart hook from step 4 of the manual setup below to `~/.claude/settings.json`, with the real path. Merge it into any hooks already there, and show the diff before writing.
+6. **Skill.** Copy `skills/whats-next` to `~/.claude/skills/whats-next`. Ask which tools the user works in (code host, chat, email, calendar, tracker) and which of them are connected to Claude Code, then edit the skill's sources to match. Drop the sources they don't use.
+7. **Sidebar.** Set `TOWER` at the top of `mods/tower-sidebar/hooks/register.tsx` to the tower folder. Run `claude plugin validate mods/tower-sidebar` and `claude plugin test mods/tower-sidebar`, and fix anything that fails before moving on.
+8. **Update check (optional).** Ask whether they want the every-other-day check. Only with a yes, schedule `update-check/run.ps1` (Task Scheduler on Windows, cron or launchd elsewhere).
+9. **Hand over.** Give the user the command from step 7 below to start the tower in a new terminal tab. Tell them the tower picks up from `tasks/CONTROL-TOWER.md`, and that from then on they start work by telling the tower what they want.
+
+Never commit the user's `STATUS.md`, `whats-next.json`, task files or notes. The `.gitignore` already covers them.
+
+### By hand
+
 1. **Clone** somewhere permanent, for example `~/control-tower`.
 2. **Copy the examples:** `STATUS.example.md` to `STATUS.md` and `whats-next.example.json` to `whats-next.json`.
 3. **Guardrails:** merge `CLAUDE.example.md` into `~/.claude/CLAUDE.md` and make it yours. Don't skip this one.
