@@ -1,0 +1,29 @@
+{
+  "updatedAt": "2026-10-27T11:00:00-07:00",
+  "prs": [],
+  "decisions": [
+    { "text": "Which API the assistant reads through", "note": "Thursday call: agree the contract", "url": "https://example.com/wiki/api-contract" }
+  ],
+  "tasks": [
+    { "text": "Review the setup guide before Thursday", "note": "Written by ONBOARDING GUIDE", "url": "https://example.com/guide" },
+    { "text": "PROJ-123: pick the next connector test", "url": "https://example.com/browse/PROJ-123" }
+  ],
+  "worth": [],
+  "emails": [],
+  "waiting": [
+    { "text": "Engineer: the fix on #42, then it comes back to you", "note": "Still on the reviewed commit", "group": "AI team", "url": "https://github.com/example/repo/pull/42" },
+    { "text": "Partner team: UI fixes to QA", "group": "Partner team", "url": "https://example.com/browse/PROJ-130" },
+    { "text": "Infra asks", "note": "Blocked on Thursday's decision", "group": "IT & DevOps" }
+  ],
+  "meetings": [
+    { "text": "Wed 03:30 PT API contract call", "url": "https://example.com/calendar/1" }
+  ],
+  "sources": [
+    { "name": "Sessions", "ok": true, "note": "API CONTRACT busy" },
+    { "name": "GitHub", "ok": true, "note": "no new PRs" },
+    { "name": "Chat", "ok": true, "note": "nothing new" },
+    { "name": "Email", "ok": true, "note": "nothing for you" },
+    { "name": "Calendar", "ok": true, "note": "nothing new" },
+    { "name": "Tracker", "ok": true, "note": "PROJ-130 moved to QA" }
+  ]
+}

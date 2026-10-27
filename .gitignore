@@ -1,0 +1,13 @@
+# Your own tower state stays local.
+STATUS.md
+whats-next.json
+sweep.log
+worth-a-look.json
+tasks/*
+!tasks/CONTROL-TOWER.md
+!tasks/EXAMPLE-WORKSTREAM.md
+notes/
+archive/
+updates/
+node_modules/
+mods/tower-sidebar/.claude-plugin/types/

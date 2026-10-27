@@ -1,0 +1,7 @@
+{
+  "name": "tower-sidebar",
+  "version": "0.1.0",
+  "description": "Control tower sidebar: what needs you, what you're waiting on, and clickable workstreams",
+  "types": "./types/index.d.ts",
+  "license": "MIT"
+}

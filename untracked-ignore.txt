@@ -1,0 +1,1 @@
+# Sessions the sidebar's "Not tracked" list leaves out, one tab name per line.
