@@ -2,11 +2,23 @@
 
 A way to run lots of Claude Code sessions at once without losing track of them.
 
+![The control tower in Windows Terminal: the CONTROL TOWER tab beside three workstream tabs, the tower answering a sweep question and opening a workstream on the left, the sidebar on the right](docs/tower.webp)
+
 One session is the **control tower**. It doesn't do the real work. It hands that out to **workstreams**, each a Claude Code session in its own terminal tab, and keeps one status file honest. A **sidebar** in the tower's terminal shows what needs you, what you're waiting on and every workstream, and a click on a workstream reopens it.
 
 The write-up with the reasoning behind all of this is here: https://www.mattdav.is/blog/my-claude-code-control-tower
 
 This is my real setup with the work-specific bits taken out. It's built around how I work, so treat it as a starting point and change whatever doesn't fit you.
+
+## The sidebar
+
+<p>
+  <img src="docs/sidebar-top.webp" width="32%" alt="Sidebar top: plan usage bars, then cards for PRs awaiting approval, architecture decisions, things that need you and a Worth a look suggestion">
+  <img src="docs/sidebar-waiting.webp" width="32%" alt="Sidebar with most sections folded to clear, an Emails card with one ask and a Waiting on others card grouped by team">
+  <img src="docs/sidebar-workstreams.webp" width="32%" alt="Sidebar bottom: the Workstreams list with status dots and a Not tracked list of sessions to adopt or ignore">
+</p>
+
+Every section folds to "clear" when there's nothing in it. Workstreams show their state from STATUS.md, and a click reopens one. All the data in these screenshots is made up.
 
 ## What's in here
 
