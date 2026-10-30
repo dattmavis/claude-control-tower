@@ -83,7 +83,7 @@ Never commit the user's `STATUS.md`, `whats-next.json`, task files or notes. The
    ```json
    "hooks": {
      "SessionStart": [{
-       "matcher": "startup|compact|clear",
+       "matcher": "startup|resume|compact|clear|fork",
        "hooks": [{ "type": "command",
          "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/you/control-tower/hooks/reload-context.ps1" }]
      }]

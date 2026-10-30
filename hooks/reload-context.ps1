@@ -1,4 +1,5 @@
-﻿# SessionStart hook (startup, compact, clear). Whatever this prints is added to the session's context.
+﻿# SessionStart hook (startup, resume, compact, clear, fork). Resume and fork are there so a reopened or forked session picks up
+# task-file changes made since it last ran (the tower adds "Current ask" sections that way). Whatever this prints is added to the session's context.
 # The tower gets STATUS.md back; a workstream gets its task file back. Every other session gets nothing.
 $root = Split-Path $PSScriptRoot -Parent
 if ($env:CLAUDE_TOWER -eq '1') {
